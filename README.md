@@ -4,6 +4,8 @@
 
 📦 Download Feather (iOS): [**Latest**](https://github.com/CLARATION/Feather/releases/latest/download/Feather.ipa)
 
+✍️ Sign IPA: [**Sign**](https://sign.ipasign.cc/)
+
 
 ## Credits
 
