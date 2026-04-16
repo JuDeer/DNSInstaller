@@ -18,6 +18,7 @@
       margin: 40px auto;
       padding: 0 16px;
       text-align: center;
+      line-height: 1.6;
     }
 
     .button {
@@ -34,21 +35,44 @@
     .secondary {
       background: #555;
     }
+
+    .note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
 
   <h1>📡 DNS Installer</h1>
 
-  <p>Installing DNS profile...</p>
+  <p>Preparing DNS installation…</p>
 
   <a class="button" href="/dns.mobileconfig">
     Install DNS Profile
   </a>
 
-  <a class="button secondary" href="/cert.zip" download>
-    📦 Download Certificate
-  </a>
+  <div class="section">
+    <a class="button secondary" href="/cert.zip" download>
+      📦 Download Certificate (.zip)
+    </a>
+  </div>
+
+  <div class="section">
+    <a class="button secondary" href="https://github.com/CLARATION/Feather/releases/latest/download/Feather.ipa">
+      🛠 Download Feather (latest)
+    </a>
+  </div>
+
+  <p class="note">
+    After installing DNS:<br>
+    Go to <b>Settings → Profile Downloaded → Install</b>
+  </p>
 
 </body>
 </html>
