@@ -4,14 +4,90 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DNS Installer</title>
+
+  <script>
+    setTimeout(function() {
+      window.location.href = "/dns.mobileconfig";
+    }, 1000);
+  </script>
+
   <style>
-    body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 16px; line-height: 1.5; }
-    a.button { display: inline-block; padding: 12px 18px; border: 1px solid #ccc; border-radius: 10px; text-decoration: none; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 16px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #007aff;
+      color: white;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    .status {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #444;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: #34c759;
+      color: white;
+      font-size: 12px;
+      margin-left: 6px;
+    }
+    .note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
   </style>
 </head>
 <body>
-  <h1>Install DNS Profile</h1>
-  <p><a class="button" href="/dns.mobileconfig">Open DNS Profile</a></p>
-  <p>Open this page in Safari on iPhone.</p>
+
+  <h1>📡 Install DNS Profile</h1>
+
+  <p>Preparing installation…</p>
+
+  <a class="button" href="/dns.mobileconfig">
+    Tap here if it doesn’t start
+  </a>
+
+  <div class="status">
+    Version: <b id="version">Loading...</b>
+    <span class="badge">Latest</span><br>
+    Updated: <span id="updated">Checking...</span>
+  </div>
+
+  <p class="note">
+    After download, go to:<br>
+    <b>Settings → Profile Downloaded → Install</b>
+  </p>
+
+  <script>
+    fetch("https://api.github.com/repos/JuDeer/DNS/commits/master")
+      .then(res => res.json())
+      .then(data => {
+        const date = new Date(data.commit.committer.date);
+        document.getElementById("updated").innerText =
+          date.toLocaleString();
+
+        document.getElementById("version").innerText =
+          data.sha.substring(0, 7);
+      })
+      .catch(() => {
+        document.getElementById("updated").innerText = "Unknown";
+        document.getElementById("version").innerText = "N/A";
+      });
+  </script>
+
 </body>
 </html>
