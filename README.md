@@ -2,13 +2,7 @@
 
 📦 Download certificate:  [**cert.zip**](https://dnsinstaller.onrender.com/cert.zip)
 
-📦 Download Feather (iOS): [**Latest**](https://github.com/CLARATION/Feather/releases/latest/download/Feather.ipa)
-
-✍️ Sign IPA: [**Sign**](https://sign.ipasign.cc/)
-
-
 ## Credits
 
 - [Khoindvn DNS](https://khoindvn.io.vn/)
 - [Feather](https://github.com/CLARATION/Feather)
-- [ipasign](https://sign.ipasign.cc/")
