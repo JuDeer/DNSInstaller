@@ -4,5 +4,5 @@
 
 ## Credits
 
-- [Khoindvn DNS](https://khoindvn.io.vn/)
+- [Khoindvn](https://khoindvn.io.vn/)
 - [Feather](https://github.com/CLARATION/Feather)
